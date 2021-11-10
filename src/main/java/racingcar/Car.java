@@ -12,21 +12,21 @@ public class Car {
     private final int number;
     private int distance;
 
-    Car(int number) {
+    public Car(int number) {
         this.number = number;
         this.distance = START_POINT;
     }
 
     public void initialize() {
-        this.distance = 0;
+        this.distance = START_POINT;
     }
 
-    public int runOrStop(int randomNumber) {
-        if (randomNumber < STOP_LOWER_BOUNDARY || randomNumber > RUN_UPPER_BOUNDARY) {
+    public int runOrStop(int number) {
+        if (number < STOP_LOWER_BOUNDARY || number > RUN_UPPER_BOUNDARY) {
             throw new IllegalArgumentException("Random Number should be between 0 to 10.");
         }
 
-        if (randomNumber >= RUN_LOWER_BOUNDARY) {
+        if (number >= RUN_LOWER_BOUNDARY) {
             distance++;
         }
 

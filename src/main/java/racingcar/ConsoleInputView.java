@@ -8,7 +8,7 @@ public class ConsoleInputView implements InputView {
 
     private final Scanner scanner;
 
-    ConsoleInputView() {
+    public ConsoleInputView() {
         scanner = new Scanner(System.in);
     }
 

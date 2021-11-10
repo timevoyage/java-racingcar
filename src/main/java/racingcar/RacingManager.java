@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class RacingManager {
     private final List<Car> cars;
 
-    RacingManager(List<Car> cars) {
+    public RacingManager(List<Car> cars) {
         this.cars = cars;
     }
 

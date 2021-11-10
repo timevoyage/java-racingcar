@@ -9,7 +9,7 @@ public class CarFactory {
 
     private final int numberOfCars;
 
-    CarFactory(int numberOfCars) {
+    public CarFactory(int numberOfCars) {
         this.numberOfCars = numberOfCars;
     }
 

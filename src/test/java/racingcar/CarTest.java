@@ -58,11 +58,15 @@ public class CarTest {
     @Test
     void testLowerRange() {
         car.initialize();
-        assertThatThrownBy(() -> car.runOrStop(STOP_LOWER_BOUNDARY_MINUS_ONE)).isInstanceOf(IllegalArgumentException.class);
-        car.initialize();
         assertThat(car.runOrStop(STOP_LOWER_BOUNDARY)).isEqualTo(INDICATOR_OF_STOP);
         car.initialize();
         assertThat(car.runOrStop(STOP_LOWER_BOUNDARY_PLUS_ONE)).isEqualTo(INDICATOR_OF_STOP);
+    }
+
+    @Test
+    void testLowerRangeThrowExceptionWhenNumberIsBelowZero() {
+        car.initialize();
+        assertThatThrownBy(() -> car.runOrStop(STOP_LOWER_BOUNDARY_MINUS_ONE)).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
@@ -71,6 +75,10 @@ public class CarTest {
         assertThat(car.runOrStop(RUN_UPPER_BOUNDARY_MINUS_ONE)).isEqualTo(INDICATOR_OF_PROGRESS);
         car.initialize();
         assertThat(car.runOrStop(RUN_UPPER_BOUNDARY)).isEqualTo(INDICATOR_OF_PROGRESS);
+    }
+
+    @Test
+    void testUpperRangeThrowExceptionWhenNumberIsAboveNine() {
         car.initialize();
         assertThatThrownBy(() -> car.runOrStop(RUN_UPPER_BOUNDARY_PLUS_ONE)).isInstanceOf(IllegalArgumentException.class);
     }
